@@ -58,7 +58,7 @@ enum ctrl_keycodes {
 keymap_config_t keymap_config;
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT(
+[0] = LAYOUT(
         KC_ESC,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,             KC_PSCR, KC_SLCK, KC_PAUS, \
         KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC,   KC_INS,  KC_HOME, KC_PGUP, \
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,   KC_DEL,  KC_END,  KC_PGDN, \
@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,                              KC_UP, \
         KC_LCTL, KC_LGUI, KC_LALT,                   KC_SPC,                             KC_RALT, MO(1),   KC_APP,  KC_RCTL,            KC_LEFT, KC_DOWN, KC_RGHT \
     ),
-    [1] = LAYOUT(
+[1] = LAYOUT(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            KC_MUTE, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   KC_MPLY, KC_MSTP, KC_VOLU, \
         L_T_BR,  L_PSD,   L_BRI,   L_PSI,   _______, _______, _______, U_T_AUTO,U_T_AGCR,_______, MO(2),   _______, _______, _______,   KC_MPRV, KC_MNXT, KC_VOLD, \
@@ -74,7 +74,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, L_T_MD,  L_T_ONF, _______, _______, MD_BOOT, TG_NKRO, _______, _______, _______, _______, _______,                              _______, \
         _______, _______, _______,                   _______,                            _______, _______, _______, _______,            _______, _______, _______ \
     ),
-    [2] = LAYOUT(
+[2] = LAYOUT(
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            _______, _______, _______, \
         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, \
         L_CP_NX, L_SP_SL, L_SP_WD, L_SP_FA, _______, _______, L_CP_NX, L_SP_SL, L_SP_WD, L_SP_FA, _______, _______, _______, _______,   _______, _______, _______, \
@@ -82,16 +82,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______, TG_NKRO, _______, _______, _______, _______, _______,                              _______, \
         _______, _______, _______,                   _______,                            _______, _______, _______, _______,            _______, _______, _______ \
     ),
-    /*
-    [X] = LAYOUT(
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            _______, _______, _______, \
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, \
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, \
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
-        _______, _______, _______, _______, _______, _______, TG_NKRO, _______, _______, _______, _______, _______,                              _______, \
-        _______, _______, _______,                   _______,                            _______, _______, _______, _______,            _______, _______, _______ \
-    ),
-    */
+/*
+[X] = LAYOUT(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,            _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,   _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+    _______, _______, _______, _______, _______, _______, TG_NKRO, _______, _______, _______, _______, _______,                              _______, \
+    _______, _______, _______,                   _______,                            _______, _______, _______, _______,            _______, _______, _______ \
+),
+*/
 };
 
 // see: /tmk_core/common/keycode.h
@@ -113,12 +113,17 @@ struct {
     uint8_t COLOR_PATTERN_INDEX;
     uint8_t TRAVEL_DISTANCE;
 } USER_CONFIG = {
-    .PATTERN_INDEX = 1,
-    .WAVE_FRONT_WIDTH = 3,
-    .WAVE_PERIOD = 50,
-    .COLOR_PATTERN_INDEX = 0,
-    .TRAVEL_DISTANCE = 25,
+        .PATTERN_INDEX = 1,
+        .WAVE_FRONT_WIDTH = 3,
+        .WAVE_PERIOD = 50,
+        .COLOR_PATTERN_INDEX = 0,
+        .TRAVEL_DISTANCE = 25,
 };
+
+
+#define TIMEOUT_ACTIVITY 20000
+uint32_t time_last_activity;
+bool led_timeout;
 
 uint8_t ktli(uint16_t keycode){
     if(keycode < 256){
@@ -126,8 +131,8 @@ uint8_t ktli(uint16_t keycode){
         return KEYCODE_TO_LED_ID[keycode];
     }
     switch(keycode){
-    // definition of MO(layer): quantum/quantum_keycodes.h: line 614
-    case MO(1): return 82;
+        // definition of MO(layer): quantum/quantum_keycodes.h: line 614
+        case MO(1): return 82;
     }
     return 0;
 };
@@ -159,13 +164,13 @@ static void init_keycode_to_led_map(void){
 #define KEY_POSITION_MAP_COLUMNS 20
 static void init_distance_map(void){
     uint16_t KEY_POSITION_MAP[KEY_POSITION_MAP_ROWS][KEY_POSITION_MAP_COLUMNS] = {
-        { KC_NO,   KC_ESC,  KC_NO,   KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_NO,  KC_F5,  KC_F6,   KC_F7,  KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,  KC_NO,   KC_PSCR, KC_SLCK, KC_PAUS,  },
-        // { KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    },
-        { KC_NO,   KC_GRV,  KC_1,    KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,    KC_9,   KC_0,    KC_MINS,  KC_EQL,  KC_BSPC, KC_BSPC, KC_NO,   KC_INS,  KC_HOME, KC_PGUP,  },
-        { KC_NO,   KC_TAB,  KC_Q,    KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,    KC_O,   KC_P,    KC_LBRC,  KC_RBRC, KC_BSLS, KC_BSLS, KC_NO,   KC_DEL,  KC_END,  KC_PGDN,  },
-        { KC_NO,   KC_CAPS, KC_A,    KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,    KC_L,   KC_SCLN, KC_QUOT,  KC_ENT,  KC_ENT,  KC_ENT,  KC_NO,   KC_NO,   KC_NO,   KC_NO,    },
-        { KC_NO,   KC_LSFT, KC_Z,    KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,  KC_RSFT, KC_RSFT, KC_RSFT, KC_NO,   KC_NO,   KC_UP,   KC_NO,    },
-        { KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SPC, KC_SPC, KC_SPC, KC_RALT, KC_NO,  MO(1),   KC_APP,   KC_RCTL, KC_RCTL, KC_RCTL, KC_NO,   KC_LEFT, KC_DOWN, KC_RIGHT, },
+            { KC_NO,   KC_ESC,  KC_NO,   KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_NO,  KC_F5,  KC_F6,   KC_F7,  KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,  KC_NO,   KC_PSCR, KC_SLCK, KC_PAUS,  },
+            // { KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,  KC_NO,   KC_NO,  KC_NO,   KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    },
+            { KC_NO,   KC_GRV,  KC_1,    KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,    KC_9,   KC_0,    KC_MINS,  KC_EQL,  KC_BSPC, KC_BSPC, KC_NO,   KC_INS,  KC_HOME, KC_PGUP,  },
+            { KC_NO,   KC_TAB,  KC_Q,    KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,    KC_O,   KC_P,    KC_LBRC,  KC_RBRC, KC_BSLS, KC_BSLS, KC_NO,   KC_DEL,  KC_END,  KC_PGDN,  },
+            { KC_NO,   KC_CAPS, KC_A,    KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,    KC_L,   KC_SCLN, KC_QUOT,  KC_ENT,  KC_ENT,  KC_ENT,  KC_NO,   KC_NO,   KC_NO,   KC_NO,    },
+            { KC_NO,   KC_LSFT, KC_Z,    KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,  KC_RSFT, KC_RSFT, KC_RSFT, KC_NO,   KC_NO,   KC_UP,   KC_NO,    },
+            { KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, KC_SPC, KC_SPC, KC_SPC, KC_SPC, KC_SPC, KC_RALT, KC_NO,  MO(1),   KC_APP,   KC_RCTL, KC_RCTL, KC_RCTL, KC_NO,   KC_LEFT, KC_DOWN, KC_RIGHT, },
     };
     uint8_t columns = KEY_POSITION_MAP_COLUMNS;
     uint8_t rows = KEY_POSITION_MAP_ROWS;
@@ -279,7 +284,7 @@ void led_matrix_run(void)
         if(led_index < KEY_LED_COUNT){                          //
             user_led_cur = USER_LED[led_index];                 // `struct user_led_t USER_LED[]` is stored globally.
         }                                                       //
-                                                                //
+        //
         if(led_index < KEY_LED_COUNT && user_led_cur.state){    // `user_led_cur` is just for convenience
             ro = user_led_cur.r;                                //
             go = user_led_cur.g;                                //
@@ -305,11 +310,11 @@ void led_matrix_run(void)
 
                 if (led_animation_orientation)
                 {
-                  po = led_cur->py;
+                    po = led_cur->py;
                 }
                 else
                 {
-                  po = led_cur->px;
+                    po = led_cur->px;
                 }
 
                 float pomod;
@@ -461,18 +466,18 @@ void calculate_keystroke_distance(void){
             for(uint8_t j = 1; j <= KEY_LED_COUNT; ++j){
                 delta_period = period_passed - DISTANCE_MAP[led_id][j];
                 if(( delta_period < USER_CONFIG.WAVE_FRONT_WIDTH) && (
-                    DISTANCE_MAP[led_id][j] <= USER_CONFIG.TRAVEL_DISTANCE
+                        DISTANCE_MAP[led_id][j] <= USER_CONFIG.TRAVEL_DISTANCE
                 )){
                     switch(USER_CONFIG.PATTERN_INDEX){
-                    case 3:
-                    case 4:
-                    case 5:
-                    case 6:
-                        DISTANCE_FROM_LAST_KEYSTROKE[j] += delta_period;
-                        break;
-                    default:
-                        DISTANCE_FROM_LAST_KEYSTROKE[j] = 1;
-                        break;
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            DISTANCE_FROM_LAST_KEYSTROKE[j] += delta_period;
+                            break;
+                        default:
+                            DISTANCE_FROM_LAST_KEYSTROKE[j] = 1;
+                            break;
                     }
                     alive = 1;
                 }
@@ -484,35 +489,35 @@ void calculate_keystroke_distance(void){
 
 #define COLOR_PATTERN_RGB_COUNT 18
 static uint8_t COLOR_PATTERNS[][COLOR_PATTERN_RGB_COUNT][3] = {
-    { // default rainbow color
-        {255,   0,   0}, {255,   0,   0}, {255, 127,   0},
-        {255, 127,   0}, {255, 255,   0}, {255, 255,   0},
-        {120, 255,   0}, {120, 255,   0}, {  0, 255,   0},
-        {  0, 255,   0}, {  0, 255, 120}, {  0, 255, 120},
-        {  0,   0, 255}, {  0,   0, 255}, { 75,   0, 130},
-        { 75,   0, 130}, { 43,   0, 130}, { 43,   0, 130},
-    }, { // light rainbow color
-        {248,  12,  18}, {238,  17,   0}, {255,  51,  17},
-        {255,  68,  32}, {255, 102,  68}, {255, 153,  51},
-        {254, 174,  45}, {204, 187,  51}, {208, 195,  16},
-        {170, 204,  34}, {105, 208,  37}, { 34, 204, 170},
-        { 18, 189, 185}, { 17, 170, 187}, { 68,  68, 221},
-        { 51,  17, 187}, { 59,  12, 189}, { 68,  34, 153},
-    }, { // white flat
-        {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
-        {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
-        {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
-        {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
-        {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
-        {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
-    }, { // white fade, cos curve
-        {255, 255, 255}, {255, 255, 255}, {252, 252, 252},
-        {247, 247, 247}, {240, 240, 240}, {232, 232, 232},
-        {221, 221, 221}, {209, 209, 209}, {196, 196, 196},
-        {181, 181, 181}, {164, 164, 164}, {147, 147, 147},
-        {128, 128, 128}, {108, 108, 108}, { 88,  88,  88},
-        { 66,  66,  66}, { 45,  45,  45}, { 23,  23,  23},
-    },
+        { // default rainbow color
+                {255,   0,   0}, {255,   0,   0}, {255, 127,   0},
+                {255, 127,   0}, {255, 255,   0}, {255, 255,   0},
+                {120, 255,   0}, {120, 255,   0}, {  0, 255,   0},
+                {  0, 255,   0}, {  0, 255, 120}, {  0, 255, 120},
+                {  0,   0, 255}, {  0,   0, 255}, { 75,   0, 130},
+                { 75,   0, 130}, { 43,   0, 130}, { 43,   0, 130},
+        }, { // light rainbow color
+                {248,  12,  18}, {238,  17,   0}, {255,  51,  17},
+                {255,  68,  32}, {255, 102,  68}, {255, 153,  51},
+                {254, 174,  45}, {204, 187,  51}, {208, 195,  16},
+                {170, 204,  34}, {105, 208,  37}, { 34, 204, 170},
+                { 18, 189, 185}, { 17, 170, 187}, { 68,  68, 221},
+                { 51,  17, 187}, { 59,  12, 189}, { 68,  34, 153},
+        }, { // white flat
+                {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
+                {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
+                {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
+                {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
+                {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
+                {255, 255, 255}, {255, 255, 255}, {255, 255, 255},
+        }, { // white fade, cos curve
+                {255, 255, 255}, {255, 255, 255}, {252, 252, 252},
+                {247, 247, 247}, {240, 240, 240}, {232, 232, 232},
+                {221, 221, 221}, {209, 209, 209}, {196, 196, 196},
+                {181, 181, 181}, {164, 164, 164}, {147, 147, 147},
+                {128, 128, 128}, {108, 108, 108}, { 88,  88,  88},
+                { 66,  66,  66}, { 45,  45,  45}, { 23,  23,  23},
+        },
 };
 static const uint8_t COLOR_PATTERNS_COUNT = (
         sizeof(COLOR_PATTERNS) / sizeof(COLOR_PATTERNS[0]));
@@ -527,7 +532,7 @@ void unset_user_led_rgb(uint8_t i){
     USER_LED[i-1].state = 0;
 }
 void set_indicator_led_rgb(uint8_t i,
-        uint8_t layer, uint8_t r, uint8_t g, uint8_t b){
+                           uint8_t layer, uint8_t r, uint8_t g, uint8_t b){
     USER_LED[i-1].state |= 1 << layer;
     USER_LED[i-1].r = r;
     USER_LED[i-1].g = g;
@@ -539,7 +544,7 @@ void unset_indicator_led_rgb(uint8_t i, uint8_t layer){
 
 void refresh_pattern_indicators(void){
     static uint8_t GRV_123456[] = {
-        KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6,
+            KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6,
     };
 
     if(layer_state >= 0x04){
@@ -558,14 +563,14 @@ void refresh_pattern_indicators(void){
 }
 void refresh_color_pattern_indicators(void){
     static uint8_t ZXCVBNM_COMM_DOT[] = {
-        KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT,
+            KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT,
     };
 
     if(layer_state >= 0x04){
         uint8_t (*c)[3] = &COLOR_PATTERNS[USER_CONFIG.COLOR_PATTERN_INDEX][0];
         for(uint8_t i = 0; i < 9; ++i){
             set_indicator_led_rgb(ktli(ZXCVBNM_COMM_DOT[i]),
-                    2, c[i][0], c[i][1], c[i][2]);
+                                  2, c[i][0], c[i][1], c[i][2]);
         }
     } else{
         for(uint8_t i = 0; i < 9; ++i){
@@ -586,12 +591,20 @@ void matrix_scan_user(void) {
         layer = 1;
     }
 
+    if (!led_timeout && timer_elapsed32(time_last_activity) > TIMEOUT_ACTIVITY) {
+        led_timeout = 1;
+        if (led_enabled)
+        {
+            I2C3733_Control_Set(0);
+        }
+    }
+
     calculate_keystroke_distance();
 
 
-    #define USE_PATTERN 0
-    #define BLACK_RGB 1
-    #define COLOR_RGB 2
+#define USE_PATTERN 0
+#define BLACK_RGB 1
+#define COLOR_RGB 2
     uint8_t ci; // color index
     uint8_t *rgb;
     uint8_t handle_type;
@@ -603,24 +616,24 @@ void matrix_scan_user(void) {
         distance = DISTANCE_FROM_LAST_KEYSTROKE[i];
 
         switch(USER_CONFIG.PATTERN_INDEX){
-        case 0: handle_type = USE_PATTERN; break;
-        case 1: handle_type = distance ? USE_PATTERN : BLACK_RGB; break;
-        case 2: handle_type = distance ? BLACK_RGB : USE_PATTERN; break;
-        case 3: handle_type = distance ? COLOR_RGB : BLACK_RGB; break;
-        case 4: handle_type = distance ? COLOR_RGB : USE_PATTERN; break;
-        case 5:
-        case 6: handle_type = distance ? COLOR_RGB : USE_PATTERN; break;
+            case 0: handle_type = USE_PATTERN; break;
+            case 1: handle_type = distance ? USE_PATTERN : BLACK_RGB; break;
+            case 2: handle_type = distance ? BLACK_RGB : USE_PATTERN; break;
+            case 3: handle_type = distance ? COLOR_RGB : BLACK_RGB; break;
+            case 4: handle_type = distance ? COLOR_RGB : USE_PATTERN; break;
+            case 5:
+            case 6: handle_type = distance ? COLOR_RGB : USE_PATTERN; break;
         }
         switch(handle_type){
-        case USE_PATTERN: unset_user_led_rgb(i); break;
-        case BLACK_RGB: set_user_led_rgb(i, 0, 0, 0); break;
-        case COLOR_RGB:
-            ci = (DISTANCE_FROM_LAST_KEYSTROKE[i] * COLOR_PATTERN_RGB_COUNT /
-                    USER_CONFIG.WAVE_FRONT_WIDTH) % COLOR_PATTERN_RGB_COUNT;
-            rgb = &COLOR_PATTERNS[USER_CONFIG.COLOR_PATTERN_INDEX][ci][0];
+            case USE_PATTERN: unset_user_led_rgb(i); break;
+            case BLACK_RGB: set_user_led_rgb(i, 0, 0, 0); break;
+            case COLOR_RGB:
+                ci = (DISTANCE_FROM_LAST_KEYSTROKE[i] * COLOR_PATTERN_RGB_COUNT /
+                      USER_CONFIG.WAVE_FRONT_WIDTH) % COLOR_PATTERN_RGB_COUNT;
+                rgb = &COLOR_PATTERNS[USER_CONFIG.COLOR_PATTERN_INDEX][ci][0];
 
-            set_user_led_rgb(i, rgb[0], rgb[1], rgb[2]);
-            break;
+                set_user_led_rgb(i, rgb[0], rgb[1], rgb[2]);
+                break;
         }
     }
 
@@ -629,47 +642,47 @@ void matrix_scan_user(void) {
     if(layer != last_layer){
 
         static uint8_t QWEASDP[] = {
-            KC_Q, KC_W, KC_E, KC_A, KC_S, KC_D, KC_P,
+                KC_Q, KC_W, KC_E, KC_A, KC_S, KC_D, KC_P,
         };
         static uint8_t YUIOHJKL[] = {
-            KC_Y, KC_U, KC_I, KC_O, KC_H, KC_J, KC_K, KC_L,
+                KC_Y, KC_U, KC_I, KC_O, KC_H, KC_J, KC_K, KC_L,
         };
 
         switch(last_layer){
-        case 1:
-            for(uint8_t i = 0; i < 7; ++i){
-                unset_indicator_led_rgb(ktli(QWEASDP[i]), 1);
-            }
-            break;
-        case 2:
-            for(uint8_t i = 0; i < 6; ++i){
-                unset_indicator_led_rgb(ktli(QWEASDP[i]), 2);
-            }
-            for(uint8_t i = 0; i < 8; ++i){
-                unset_indicator_led_rgb(ktli(YUIOHJKL[i]), 2);
-            }
-            unset_indicator_led_rgb(ktli(KC_TAB), 2);
-            unset_indicator_led_rgb(ktli(KC_CAPS), 2);
-            break;
+            case 1:
+                for(uint8_t i = 0; i < 7; ++i){
+                    unset_indicator_led_rgb(ktli(QWEASDP[i]), 1);
+                }
+                break;
+            case 2:
+                for(uint8_t i = 0; i < 6; ++i){
+                    unset_indicator_led_rgb(ktli(QWEASDP[i]), 2);
+                }
+                for(uint8_t i = 0; i < 8; ++i){
+                    unset_indicator_led_rgb(ktli(YUIOHJKL[i]), 2);
+                }
+                unset_indicator_led_rgb(ktli(KC_TAB), 2);
+                unset_indicator_led_rgb(ktli(KC_CAPS), 2);
+                break;
         }
 
 
         switch(layer){
-        case 1:
-            for(uint8_t i = 0; i < 7; ++i){
-                set_indicator_led_rgb(ktli(QWEASDP[i]), 1, 255, 0, 0);
-            }
-            break;
-        case 2:
-            for(uint8_t i = 0; i < 6; ++i){
-                set_indicator_led_rgb(ktli(QWEASDP[i]), 2, 0, 255, 0);
-            }
-            for(uint8_t i = 0; i < 8; ++i){
-                set_indicator_led_rgb(ktli(YUIOHJKL[i]), 2, 0, 255, 0);
-            }
-            set_indicator_led_rgb(ktli(KC_TAB), 2, 0, 255, 0);
-            set_indicator_led_rgb(ktli(KC_CAPS), 2, 0, 255, 0);
-            break;
+            case 1:
+                for(uint8_t i = 0; i < 7; ++i){
+                    set_indicator_led_rgb(ktli(QWEASDP[i]), 1, 255, 0, 0);
+                }
+                break;
+            case 2:
+                for(uint8_t i = 0; i < 6; ++i){
+                    set_indicator_led_rgb(ktli(QWEASDP[i]), 2, 0, 255, 0);
+                }
+                for(uint8_t i = 0; i < 8; ++i){
+                    set_indicator_led_rgb(ktli(YUIOHJKL[i]), 2, 0, 255, 0);
+                }
+                set_indicator_led_rgb(ktli(KC_TAB), 2, 0, 255, 0);
+                set_indicator_led_rgb(ktli(KC_CAPS), 2, 0, 255, 0);
+                break;
         }
 
         refresh_pattern_indicators();
@@ -679,17 +692,17 @@ void matrix_scan_user(void) {
 
 
     switch(layer){
-    case 0:
-        if(timer_elapsed32(scan_timer) > 2000){
-            scan_timer = timer_read32();
-        } else if(timer_elapsed32(scan_timer) > 1000){
-            // set_user_led_rgb(ktli(KC_F5), 255, 255, 255);
-        }
-        break;
-    case 1:
-        break;
-    case 2:
-        break;
+        case 0:
+            if(timer_elapsed32(scan_timer) > 2000){
+                scan_timer = timer_read32();
+            } else if(timer_elapsed32(scan_timer) > 1000){
+                // set_user_led_rgb(ktli(KC_F5), 255, 255, 255);
+            }
+            break;
+        case 1:
+            break;
+        case 2:
+            break;
     }
 
 };
@@ -701,6 +714,13 @@ void matrix_scan_user(void) {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     static uint32_t key_timer;
 
+    time_last_activity = timer_read32();
+    if (led_timeout) {
+        led_timeout = 0;
+        if (led_enabled) {
+            I2C3733_Control_Set(1);
+        }
+    }
 
     switch (keycode) {
         case L_BRI:
@@ -850,34 +870,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
 
                 switch(USER_CONFIG.PATTERN_INDEX){
-                case 0: // None
-                    break;
-                case 1: // background off, wave on
-                    USER_CONFIG.WAVE_FRONT_WIDTH = 2;
-                    break;
-                case 2: // background on, wave off
-                    USER_CONFIG.WAVE_FRONT_WIDTH = 5;
-                    break;
-                case 3: // background off, rainbow wave
-                    USER_CONFIG.WAVE_FRONT_WIDTH = 10;
-                    break;
-                case 4: // background on, rainbow wave
-                    USER_CONFIG.WAVE_FRONT_WIDTH = 10;
-                    break;
-                case 5:
-                    USER_CONFIG.WAVE_FRONT_WIDTH = 10;
+                    case 0: // None
+                        break;
+                    case 1: // background off, wave on
+                        USER_CONFIG.WAVE_FRONT_WIDTH = 2;
+                        break;
+                    case 2: // background on, wave off
+                        USER_CONFIG.WAVE_FRONT_WIDTH = 5;
+                        break;
+                    case 3: // background off, rainbow wave
+                        USER_CONFIG.WAVE_FRONT_WIDTH = 10;
+                        break;
+                    case 4: // background on, rainbow wave
+                        USER_CONFIG.WAVE_FRONT_WIDTH = 10;
+                        break;
+                    case 5:
+                        USER_CONFIG.WAVE_FRONT_WIDTH = 10;
 
-                    USER_CONFIG.COLOR_PATTERN_INDEX = 2;
-                    USER_CONFIG.TRAVEL_DISTANCE = 0;
-                    USER_CONFIG.WAVE_PERIOD = 100;
-                    break;
-                case 6:
-                    USER_CONFIG.WAVE_FRONT_WIDTH = 25;
+                        USER_CONFIG.COLOR_PATTERN_INDEX = 2;
+                        USER_CONFIG.TRAVEL_DISTANCE = 0;
+                        USER_CONFIG.WAVE_PERIOD = 100;
+                        break;
+                    case 6:
+                        USER_CONFIG.WAVE_FRONT_WIDTH = 25;
 
-                    USER_CONFIG.COLOR_PATTERN_INDEX = 3;
-                    USER_CONFIG.TRAVEL_DISTANCE = 2;
-                    USER_CONFIG.WAVE_PERIOD = 10;
-                    break;
+                        USER_CONFIG.COLOR_PATTERN_INDEX = 3;
+                        USER_CONFIG.TRAVEL_DISTANCE = 2;
+                        USER_CONFIG.WAVE_PERIOD = 10;
+                        break;
                 }
 
                 // remove effect after changing pattern
@@ -909,7 +929,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 }
             }
             return false;
-        // these are the keys not in range 0x04 - 0x52
+            // these are the keys not in range 0x04 - 0x52
         case L_CP_PR:
         case L_CP_NX:
             if(record->event.pressed){

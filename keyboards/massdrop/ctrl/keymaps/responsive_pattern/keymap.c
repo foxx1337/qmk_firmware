@@ -16,8 +16,6 @@
 extern issi3733_led_t *lede;
 extern issi3733_led_t led_map[];
 
-extern uint32_t g_tick;
-
 enum ctrl_keycodes {
     L_BRI = SAFE_RANGE, //LED Brightness Increase
     L_BRD,              //LED Brightness Decrease

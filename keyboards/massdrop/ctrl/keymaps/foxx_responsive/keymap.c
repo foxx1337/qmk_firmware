@@ -12,7 +12,7 @@ enum ctrl_keycodes {
 
 #define TG_NKRO MAGIC_TOGGLE_NKRO //Toggle 6KRO / NKRO mode
 
-#define TIMEOUT_ACTIVITY 300000 // 300 milliseconds before lights go off
+#define TIMEOUT_ACTIVITY 300000 // 300 seconds before lights go off
 
 uint32_t time_last_activity;
 bool led_timeout;
@@ -57,7 +57,7 @@ void matrix_init_user(void) {
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
     if (!led_timeout && timer_elapsed32(time_last_activity) > TIMEOUT_ACTIVITY) {
-        led_timeout = 1;
+        led_timeout = true;
         led_state = rgb_matrix_get_flags();
         if (led_state != LED_FLAG_NONE)
         {
